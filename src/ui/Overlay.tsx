@@ -9,6 +9,8 @@ const Overlay = ({
   setTotalScoreP2,
   setActivePlayer,
   setCurrentScore,
+  totalScoreP1,
+  totalScoreP2,
 }: {
   winner: number;
   setWinner: (value: number) => void;
@@ -17,6 +19,8 @@ const Overlay = ({
   setTotalScoreP2: (value: number) => void;
   setActivePlayer: React.Dispatch<React.SetStateAction<1 | 2>>;
   setCurrentScore: (value: number) => void;
+  totalScoreP1:number,
+  totalScoreP2:number,
 }) => {
   function resetWinner() {
     setWinner(0);
@@ -43,7 +47,10 @@ const Overlay = ({
             />
           </div>
           <div className="text-4xl text-white mt-10">
-            Winner is Player {winner}
+            Total Score: {winner === 1 ? totalScoreP1 : totalScoreP2}
+          </div>
+          <div className="text-4xl text-white mt-10">
+            Winner is Player: {winner}
           </div>
           <div className="mt-10">
             <button

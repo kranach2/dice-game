@@ -20,14 +20,14 @@ const Game = () => {
       if (activePlayer === 1) {
         setTotalScoreP1((prev) => {
           const newScore = prev + value;
-          if (newScore >= 20) setWinner(1);
+          if (newScore >= 30) setWinner(1);
           return newScore;
         });
         
       } else {
         setTotalScoreP2((prev) => {
           const newScore = prev + value;
-          if (newScore >= 20) setWinner(2);
+          if (newScore >= 30) setWinner(2);
           return newScore;
         });
       }
@@ -56,7 +56,8 @@ const Game = () => {
           />
         </div>
       </div>
-      <Overlay winner={winner} setWinner={setWinner} setDice={setDice} setTotalScoreP1={setTotalScoreP1} setTotalScoreP2={setTotalScoreP2} setActivePlayer={setActivePlayer} setCurrentScore={setCurrentScore}/>
+      <Overlay winner={winner} setWinner={setWinner} setDice={setDice} setTotalScoreP1={setTotalScoreP1} setTotalScoreP2={setTotalScoreP2} setActivePlayer={setActivePlayer} setCurrentScore={setCurrentScore} totalScoreP1={totalScoreP1}
+          totalScoreP2={totalScoreP2}/>
     </>
   );
 };
